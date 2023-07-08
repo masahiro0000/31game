@@ -1,18 +1,18 @@
 import PySimpleGUI as sg
 
-layout=[[sg.Input("hutaba",key="in")],
-        [sg.Button("execute",key="btn")],
-        [sg.Text(key="txt")]]
-window=sg.Window("test",layout)
+layout=[[sg.I("hutaba",k="in")],
+        [sg.B("execute",k="btn")],
+        [sg.T(k="txt")]]
+win=sg.Window("test",layout)
 
 def execute():
-    txt="hello,"+values["in"]
-    window["txt"].update(txt)
+    txt="hello,"+v["in"]
+    win["txt"].update(txt)
 
 while True:
-    event,values=window.read()
-    if event=="btn":
+    e,v=win.read()
+    if e=="btn":
         execute()
-    if event==None:
+    if e==None:
         break
-window.close()
+win.close()
