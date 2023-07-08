@@ -1,9 +1,11 @@
 import PySimpleGUI as sg
+sg.theme("BrightColors")
 
 layout=[[sg.I("hutaba",k="in")],
         [sg.B("execute",k="btn")],
         [sg.T(k="txt")]]
-win=sg.Window("test",layout)
+win=sg.Window("test",layout,
+            font=(None,14),size=(250,120))
 
 def execute():
     txt="hello,"+v["in"]
